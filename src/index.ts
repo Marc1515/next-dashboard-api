@@ -1,14 +1,21 @@
 import { config } from "dotenv";
 config();
 
-import express from "express";
+import express, { Express } from "express";
+import routes from "./routes";
 
-const app = express();
 const PORT = process.env.PORT || 3001;
+
+function createApp(): Express {
+  const app = express();
+  app.use("/api", routes);
+  return app;
+}
 
 async function main() {
   console.log(`Running in ${process.env.ENVIRONMENT} mode.`);
   try {
+    const app = createApp();
     app.listen(PORT, () => console.log(`Runnung on Port ${PORT}`));
   } catch (error) {
     console.log(error);
