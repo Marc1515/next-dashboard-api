@@ -1,0 +1,10 @@
+{
+  "name": "next-dashboard-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "typescript": "^5.5.4"
+  }
+}
